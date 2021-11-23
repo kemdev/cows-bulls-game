@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-16">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/04210ea229.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="cows-bulls-style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Odibee+Sans&Oswald:wght@200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@200&family=Odibee+Sans&family=Orbitron:wght@400;500;600;700;800;900&Oswald:wght@200&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+
+    <title>Kareem Games</title>
+</head>
+
+<body>
+    <header id="header">
+        <div id="sun" class="bg-fix"></div>
+        <div id="cloud" class="bg-fix"></div>
+        <div id="roll-big" class="bg-fix"></div>
+        <div id="roll-small" class="bg-fix"></div>
+
+        <div class="topNavCont">
+            <div class="header-content">
+                <div class="header-content-title">
+                    <h1>Kareem<sup>&COPY;</sup> Games</h1>
+                </div>
+            </div>
+            <div class="nav-section" id="nav">
+                <nav class="nav navbar navbar-toggler">
+                    <a href="../index.html">Home</a>
+                    <a href="#game">Games</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </div>
+        </div>
+        <div class="title">
+            <h1>Cows & Bulls</h1>
+        </div>
+        <div class="playButton">
+            <a href="#PlayNowTop" class="toPlay">Play Now</a>
+        </div>
+    </header>
+
+    <main id="main">
+        <div id="PlayNowTop"></div>
+        <!-- Welcome Name Display -->
+        <div class="display-name displayHidden">
+            <p><span id="welcomeName"></span></p>
+        </div>
+        <div class="container" id="display">
+            <section class="display">
+                <!-- This is where we put the cows and bulls images when the user guesses a number that is exist. -->
+                <div class="display-content-cows">
+                    <img src="../assets/cow.svg" alt="cows" class="cows-bulls-size">
+                    <!-- Number of cows -->
+                    <p class="cows-number" id="cowsNumber">0</p>
+                </div>
+                <div class="display-content-bulls">
+                    <img src="../assets/bull.svg" alt="bulls" class="cows-bulls-size">
+                    <!-- Number of bulls -->
+                    <p class="bulls-number" id='bullsNumber'>0</p>
+                </div>
+                <!-- correct number guessed textarea -->
+
+                <textarea name="" id="textArea" cols="30" rows="3" disabled></textarea>
+            </section>
+            <!-- User Name input section -->
+            <section class="inputSection ">
+                <div class="input-content " id="userNameSection">
+                    <div class="row input-content-input ">
+                        <span>
+                          <input class="slide-up" id="userName" type="text" placeholder="Enter your name!" autocomplete="off" required/><label for="userName">Your name</label>
+                        </span>
+                    </div>
+                    <div class="input-content-button">
+                        <button type="submit" id="submituserName" class="pulse">Enter</button>
+                    </div>
+                </div>
+            </section>
+            <!-- Difficulity Section -->
+            <section class="difficultySection displayNone" id="difficulitySection">
+                <div class="difficulty-content">
+                    <div class="difficulty-content-title">
+                        <h2>Choose your difficulty</h2>
+                    </div>
+                    <div class="difficulty-content-button">
+                        <button type="submit" id="easy" class="pulse" value="easy">Easy</button>
+                        <button type="submit" id="medium" class="pulse" value="medium">Medium</button>
+                        <button type="submit" id="hard" class="pulse" value="hard">Hard</button>
+                    </div>
+                </div>
+            </section>
+            <!-- game input -->
+            <section class="gameInputSection">
+                <div class="gameInput displayNone" id="guessSection">
+                    <div class="gameInput-content">
+                        <div class="gameInput-content-input">
+                            <input type="text" id="guess" placeholder="Enter your guess!" autocomplete="off" />
+                        </div>
+                        <div class="gameInput-content-button">
+                            <button type="button" id="guessButton" class="pulse">Guess</button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- loading effect -->
+            <section class="loadingEffectSection">
+                <div class="loading displayNone" id="loading">
+                    <div class="loading-content">
+                        <div class="circle rotate" id="circle"></div>
+                        <div class="loading-content-text">
+                            <p id="noRotate">Loading...</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- end game input -->
+            </section>
+        </div>
+        <!-- Win section -->
+        <section class="win displayNone" id="win">
+            <div class="win-content">
+                <!-- <div class="win-content-text">
+                    <p>You win!</p>
+                </div> -->
+                <div class="win-content-button">
+                    <button type="button" id="playAgain" class="pulse">Play Again</button>
+                </div>
+            </div>
+        </section>
+        <!-- reset button
+        <section class="resetSection displayNone" id="resetSection">
+            <div class="reset-content">
+                <div class="reset-content-button">
+                    <button type="button" id="reset" class="pulse">Reset</button>
+                </div>
+            </div>
+        </section> -->
+        <section class="information">
+
+            <!-- Introduction to the game -->
+            <!-- ==========TEST======== -->
+            <h2 id="rules">Rules:</h2>
+            <details>
+                <summary>Rules</summary>
+                <p>One of the players comes up with a secret number (The computer in our game), and the other player tries to guess it (You).</p>
+                <p>The secret number must consist of 4 digits and each digit must be <strong>unique</strong>.</p>
+
+
+                <p><b>For example:</b></p>
+                <ul>
+                    <li><code>1112</code> would <strong>not</strong> be an acceptable secret number</li>
+                    <li><code>1234</code> on the other hand is an acceptable value for the secret number, since each digit is unique</li>
+                </ul>
+
+
+                <p>After each guess, the player will get a hint to help them guess better next time around.</p>
+                <p>The hint tells the player how many bulls and how many cows there were. What are bulls and cows?</p>
+                <ul>
+                    <li>If there are any matching digits and they are in their right positions, they are counted as <em>&quot;bulls&quot;</em>.</li>
+                    <li>If in different positions, they are counted as <em>&quot;cows&quot;</em>.</li>
+                </ul>
+
+
+                <p>For example, with a secret number <code>4271</code>:</p>
+                <p><pre>Player&#39;s try: 1234</p><br><code><span class="hljs-symbol">Hint</span>: <span class="hljs-number">1</span> <span class="hljs-keyword">bull </span><span class="hljs-keyword">and </span><span class="hljs-number">2</span> cows</code></pre>
+                    <p>How did we arrive at one bull and two cows? The bull is the number <code>2</code> as it is in the right position.</p>
+                    <p>The cows are <code>4</code> and <code>1</code>, as they exist in the secret number but they are not in the right position.</p>
+                    <p>Do <strong>not</strong> disclose to the user which digit is a cow and which one is bull, just how many there are (if any).</p>
+                    <p>There is no limit on the number of guesses - guessing continues until the player figures out the other player&#39;s secret number.</p>
+                    <p>Once the player has guessed the secret number correctly, display a message to congratulate them.</p>
+            </details>
+            <!-- ========END TEST======= -->
+        </section>
+
+    </main>
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-content-text">
+                <p>&copy; 2021 by
+                    <a href="">Kareem</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+    <script src="cows-bulls-script.js"></script>
+</body>
+
+</html>

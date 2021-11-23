@@ -1,0 +1,746 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    /* padding: 0; */
+    box-sizing: border-box;
+    margin: 0;
+    /* list-style: none; */
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    font-size: 62.5%;
+    --hover-color: #5a1a1c;
+    --main-color: #744236;
+}
+
+body {
+    font-family: Roboto, sans-serif;
+    background-color: #d3c096;
+}
+
+
+/* design scrollbar */
+
+::-webkit-scrollbar {
+    width: 20px;
+    height: 10px;
+}
+
+
+/* Handle */
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--main-color);
+}
+
+code {
+    font-family: "Inconsolata", monospace;
+    color: #de4e0a;
+    background-color: rgb(39, 39, 35);
+    padding: 1px 10px;
+    border-radius: 15px;
+    border-radius: 15px;
+    border: 1px solid #fff;
+    font-weight: bold;
+}
+
+pre {
+    tab-size: initial;
+    background-color: #1b1b1b;
+    padding: 20px;
+    color: #fff;
+    border-radius: 15px;
+}
+
+header {
+    font-family: "Oswald", sans-serif;
+    font-size: 2em;
+    padding: 80px;
+    background: linear-gradient( to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: url("../assets/Empty-scene.png");
+    /* background-image: url('../assets/greenFarmLandscape.jpg'); */
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    /* filter: sepia(0.5); */
+    filter: saturate(0.3);
+    /* backdrop blur effect */
+    position: relative;
+    overflow: hidden;
+}
+
+.bg-fix {
+    /* background-size: contain; */
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+}
+
+h1 {
+    z-index: 1;
+}
+
+#sun {
+    background-image: url("../assets/Sun.png");
+    height: 30%;
+    width: 100%;
+    /* left: 0; */
+    top: 0px;
+    mix-blend-mode: lighten;
+}
+
+#cloud {
+    background-image: url("../assets/clouds.png");
+    height: 30%;
+    width: 100%;
+    top: 0px;
+    left: 0;
+    /* filter: saturate(0.3); */
+    /* mix-blend-mode: screen; */
+}
+
+#roll-big {
+    background-image: url(../assets/bigRoll-1.png);
+    height: 490px;
+    width: 602px;
+    top: 376px;
+    left: 1420px;
+    background-size: 90%;
+}
+
+#roll-small {
+    background-image: url(../assets/smallRoll.png);
+    height: 490px;
+    width: 300px;
+    background-size: 90%;
+    left: 1140px;
+    top: 430px;
+}
+
+.title h1 {
+    color: #fff;
+    /* text-shadow: 2px 5px 0px #000; */
+    text-shadow: 3px 6px 0px #fff;
+    font-size: 6em;
+    color: #80211d;
+    /* 3d effect skew to the text */
+    transform: translate(184px, 450px) skew( 0deg, -10deg);
+    width: fit-content;
+    transition: all 0.51s ease;
+    cursor: default;
+}
+
+.title h1:hover {
+    transform: translate(190px, 472px) skew(0deg, 0deg);
+}
+
+.topNavCont {
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.header-content-title {
+    height: 100px;
+    display: flex;
+    align-items: center;
+    color: #6f2224;
+}
+
+.nav-section {
+    display: flex;
+    justify-content: space-between;
+    font-family: "Odibee Sans", cursive;
+    align-items: center;
+    /* padding: 0 5vw 0 11.8vw; */
+    height: 100px;
+    position: sticky;
+    top: 0;
+    background-color: inherit;
+    z-index: 1;
+    /* dark background effect */
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo img {
+    width: 50%;
+}
+
+.nav a {
+    height: fit-content;
+    margin: 4rem;
+    padding: 0.5rem;
+    font-size: 2.5rem;
+    color: #fff;
+    /* transition: all 0.5s ease-in-out; */
+    position: relative;
+    font-weight: lighter;
+}
+
+.nav a:hover:not(.logo) {
+    /* font-size: 2rem; */
+    color: var(--hover-color);
+    /* background-color: white; */
+    font-weight: bolder;
+}
+
+.nav a:hover::after {
+    content: "";
+    width: 0%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    border: 5px solid var(--hover-color);
+    border-width: 2px 0;
+    animation: hoverBorderEffect 1s alternate forwards;
+}
+
+.playButton a {
+    position: absolute;
+    color: #4b2f2e;
+    bottom: 0;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    border-radius: 25px;
+    padding: 3rem;
+    border: 15px groove #b95f2a;
+    font-weight: 900;
+    background-color: #e9dfc0;
+    font-size: -webkit-xxx-large;
+    transition: all 0.6s ease-in-out;
+}
+
+.playButton a:hover {
+    /* transform: scale(1.5); */
+    /* border-style: inset; */
+    filter: drop-shadow(2px 4px 6px #b95f2a);
+    background-color: #4b2f2e;
+    color: #fff;
+}
+
+#PlayNowTop {
+    width: 100%;
+    height: 20px;
+}
+
+#resetSection {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+.win-content-button {
+    width: fit-content;
+    margin: 0 auto;
+}
+
+
+/* ============================= */
+
+
+/* Start Designing the DISPLAY section */
+
+.container {
+    /* background-color: #d3c096; */
+    margin-bottom: 40px;
+}
+
+.display {
+    display: flex;
+    /* height: 50vh; */
+}
+
+.display>div {
+    width: 50%;
+    /* height: 100vh; */
+    /* background-color: #fff; */
+    /* border-radius: 10px; */
+    /* box-shadow: 0px 0px 10px #000; */
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.display-name {
+    text-align: center;
+    font-size: 4rem;
+    font-family: "Orbitron";
+    /* font-weight: 500; */
+    color: #a50354;
+    letter-spacing: 10px;
+    opacity: 1;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.display-name p {
+    margin-top: revert;
+}
+
+.displayHidden {
+    opacity: 0;
+}
+
+
+/* Input section */
+
+
+/* name and guess sections*/
+
+.inputSection,
+.gameInput {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    /* height: 35vh; */
+    /* margin-top: 40px; */
+}
+
+.inputSection {
+    margin-top: 40px;
+}
+
+
+/* .gameInput {
+    margin-top: 40px;
+} */
+
+.displayNone {
+    display: none;
+    opacity: 0;
+    transition: all 5s ease-in-out;
+}
+
+
+/* button style */
+
+.input-content-button,
+.gameInput-content-button {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#textArea {
+    order: 2;
+}
+
+.display-content-bulls {
+    order: 3;
+}
+
+textarea {
+    /* margin-top: 40px; */
+    width: 100%;
+    height: 100%;
+    border: none;
+    background-color: inherit;
+    padding: 2rem;
+    border-radius: 10px;
+    /* box-shadow: 0px 0px 10px #a77e5f; */
+    resize: none;
+    margin: auto;
+    text-align: center;
+    box-shadow: inset 9.91px 9.91px 15px #c0af89, inset -9.91px -9.91px 15px #e6d1a4;
+    overflow-x: hidden;
+}
+
+
+/* to keep the textarea design cleaned I seperate the font style from the general style */
+
+
+/* text are font style */
+
+textarea {
+    font-family: "Orbitron", sans-serif;
+    font-weight: bolder;
+    font-size: 3.5rem;
+    color: var(--main-color);
+    line-height: 67px;
+}
+
+
+/* design the loading effect */
+
+
+/* Dificulity style */
+
+.difficulty-content-title {
+    font-size: 2.5rem;
+    font-family: "Orbitron", sans-serif;
+    font-weight: bolder;
+    color: var(--main-color);
+    text-align: center;
+    margin-top: 10px;
+}
+
+.difficulty-content-button {
+    display: flex;
+    /* flex-direction: row; */
+    /* align-items: center; */
+    justify-content: space-evenly;
+    /* margin-top: 40px; */
+}
+
+#easy,
+#medium,
+#hard {
+    width: 200px;
+    height: 200px;
+    /* width: fit-content; */
+    border-radius: 50%;
+    /* text-align: center; */
+    font-size: 3em;
+    padding: 10px;
+}
+
+
+/* Input style */
+
+#guess {
+    outline: none;
+    width: 100%;
+    height: 104px;
+    border: none;
+    padding: 10px;
+    /* background: #ddcdae; */
+    color: #78462f;
+    font-weight: bolder;
+    font-size: xx-large;
+}
+
+#guess::placeholder {
+    color: #78462f;
+    /* font-weight: bolder; */
+}
+
+.row {
+    position: relative;
+    transform: scale(1.5);
+}
+
+.slide-up {
+    display: inline-block;
+    width: 215px;
+    padding: 10px 0 10px 15px;
+    font-family: "Open Sans", sans;
+    font-weight: 400;
+    color: #377d6a !important;
+    background: #efefef;
+    border: 0;
+    border-radius: 3px;
+    outline: 0;
+    text-indent: 80px;
+    transition: all 0.3s ease-in-out;
+}
+
+.slide-up::-webkit-input-placeholder {
+    color: #efefef;
+    text-indent: 0;
+    font-weight: 300;
+}
+
+.slide-up+label {
+    display: inline-block;
+    position: absolute;
+    transform: translateX(0);
+    /* top: 0; */
+    color: #fff;
+    font-size: 1.5em;
+    left: 0;
+    padding: 10px 15px;
+    text-shadow: 0 1px 0 rgba(19, 74, 70, 0.4);
+    transition: all 0.3s ease-in-out;
+    border-top-left-radius: 3px;
+    border-bottom-left-radius: 3px;
+    overflow: hidden;
+}
+
+.slide-up+label:before,
+.slide-up+label:after {
+    content: "";
+    position: absolute;
+    right: 0;
+    left: 0;
+    z-index: -1;
+    transition: all 0.3s ease-in-out;
+}
+
+.slide-up+label:before {
+    top: 6px;
+    left: 5px;
+    right: 5px;
+    bottom: 6px;
+    background: var(--main-color);
+}
+
+.slide-up+label:after {
+    top: 0;
+    bottom: 0;
+    background: var(--main-color);
+}
+
+span:nth-child(1) .slide-up {
+    text-indent: 105px;
+}
+
+span:nth-child(3) .slide-up {
+    text-indent: 125px;
+}
+
+span:nth-child(1) .slide-up:focus,
+span:nth-child(1) .slide-up:active,
+span:nth-child(3) .slide-up:focus,
+span:nth-child(3) .slide-up:active {
+    text-indent: 0;
+}
+
+.slide-up:focus,
+.slide-up:active {
+    color: #377d6a;
+    text-indent: 0;
+    background: #fff;
+    outline: 1px solid var(--main-color);
+}
+
+.slide-up:focus::-webkit-input-placeholder,
+.slide-up:active::-webkit-input-placeholder {
+    color: #aaa;
+}
+
+.slide-up:focus+label,
+.slide-up:active+label {
+    transform: translateY(-100%);
+}
+
+.slide-up:focus+label:before,
+.slide-up:active+label:before {
+    border-radius: 5px;
+}
+
+.slide-up:focus+label:after,
+.slide-up:active+label:after {
+    transform: translateY(100%);
+}
+
+
+/* End input style */
+
+.cows-bulls-size {
+    width: 8vw;
+}
+
+
+/* #submit {
+    background: var(--main-color);
+    border: none;
+    width: 100%;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px;
+    border-radius: 5px;
+} */
+
+
+/* ==================== */
+
+button {
+    background: none;
+    border: 2px solid;
+    font: inherit;
+    line-height: 1;
+    margin: 0.5em 0;
+    padding: 1em 2em;
+    cursor: pointer;
+    color: var(--color);
+    transition: 0.25s;
+    font-size: 2.6em;
+    width: 100%;
+    font-family: "Orbitron";
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+
+button:hover,
+button:focus {
+    border-color: var(--hover);
+    /* color: #fff; */
+    color: #4b2f2e;
+}
+
+.pulse {
+    /* --color: #ef6eae;
+    --hover: #ef8f6e; */
+    --color: #a50354;
+    --hover: #ac360e;
+}
+
+.pulse:hover,
+.pulse:focus {
+    -webkit-animation: pulse 1s;
+    animation: pulse 1s;
+    box-shadow: 0 0 0 2em rgba(255, 255, 255, 0);
+}
+
+
+/* ==================== */
+
+
+/* numbers */
+
+.bulls-number,
+.cows-number {
+    font-size: 4rem;
+    font-family: "Orbitron", sans-serif;
+    /* border: 1px solid var(--main-color); */
+    border-radius: 13px;
+    color: var(--main-color);
+    font-weight: 700;
+    width: 80px;
+    text-align: center;
+    line-height: 80px;
+}
+
+
+/* End input section */
+
+
+/* Loading effect */
+
+.loadingEffectSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.loading {
+    opacity: 1;
+    height: 145px;
+    transition: all 1s ease-in-out;
+}
+
+.loading-content {
+    position: relative;
+}
+
+.circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 2px solid #a50354;
+    border-top-color: transparent;
+    display: grid;
+    place-content: center;
+}
+
+.rotate {
+    -webkit-animation: rotate 1s linear infinite;
+    animation: rotate 1.5s linear infinite;
+}
+
+#noRotate {
+    font-family: "Orbitron";
+    font-weight: 500;
+    font-size: 1.5em;
+    color: #a50354;
+    animation: none;
+}
+
+.loading-content-text {
+    position: absolute;
+    top: 40px;
+    left: 12px;
+    right: 0;
+}
+
+
+/* Information style */
+
+.information {
+    margin: 0 150px;
+    padding: 0;
+    font-size: 4em;
+    line-height: 65px;
+    text-align: justify;
+}
+
+details {
+    border: 10px solid var(--main-color);
+    border-radius: 14px;
+    padding: 74px;
+    margin: 10px 0 20px 0;
+}
+
+summary {
+    cursor: pointer;
+}
+
+
+/* ============================= */
+
+
+/* Footer Design */
+
+footer {
+    background: var(--main-color);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 1.5em;
+    font-family: "Orbitron", sans-serif;
+    font-weight: 500;
+    letter-spacing: 10px;
+}
+
+footer a {
+    color: #fff;
+}
+
+
+/* ============================= */
+
+@keyframes hoverBorderEffect {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+@-webkit-keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 var(--hover);
+    }
+}
+
+
+/* loading rotate animation */
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

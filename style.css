@@ -1,0 +1,97 @@
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+ :root {
+    font-size: 62.5%;
+    --hover-color: #5a1a1c;
+}
+
+header {
+    font-family: 'Oswald', sans-serif;
+    font-size: 2em;
+    display: flex;
+    align-content: center;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 0 40px;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background-image: url('./assets/sunset-landscape.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    background-position: center;
+    filter: sepia(0.5);
+    filter: saturate(0.5);
+    /* backdrop blur effect */
+}
+
+.nav-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5vw 0 11.8vw;
+    height: 100px;
+    position: sticky;
+    top: 0;
+    background-color: inherit;
+    z-index: 1;
+}
+
+.logo {
+    width: 150px;
+}
+
+.logo img {
+    width: 50%;
+}
+
+.nav a {
+    height: fit-content;
+    margin: 4rem;
+    padding: 0.5rem;
+    font-size: 2rem;
+    color: rgb(39, 14, 14);
+    /* transition: all 0.5s ease-in-out; */
+    position: relative;
+    font-weight: lighter;
+}
+
+.nav a::after {
+    /* transition: all 0.5s ease; */
+}
+
+.nav a:hover:not(.logo) {
+    font-size: 2rem;
+    color: var(--hover-color);
+    /* background-color: white; */
+    font-weight: bolder;
+}
+
+.nav a:hover::after {
+    content: "";
+    width: 0%;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    position: absolute;
+    border: 5px solid var(--hover-color);
+    border-width: 2px 0;
+    animation: hoverBorderEffect 1s alternate forwards;
+}
+
+@keyframes hoverBorderEffect {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
