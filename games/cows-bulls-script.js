@@ -229,8 +229,8 @@ let smallRoll = document.getElementById('roll-small');
 header.addEventListener('mouseover', () => {
     sun.style.transform = 'translateX(-1000px)';
     sun.style.transition = 'all 25s ease';
-    bigRoll.style.transform = 'translate(-10px, -25px)';
-    bigRoll.style.transition = 'all 15s ease';
+    bigRoll.style.transform = 'translate(-100px, -25px)';
+    bigRoll.style.transition = 'all 7s cubic-bezier(0.52, -0.02, 0, 1.19) 0s';
     smallRoll.style.transform = 'translate(-10px, -25px)';
     smallRoll.style.transition = 'all 5s ease';
 
