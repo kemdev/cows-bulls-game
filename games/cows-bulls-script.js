@@ -155,9 +155,7 @@ console.log(randomNumber());
 
 // function to check if the guess input value is a string of 4 unique numbers
 function isNumber(str) {
-
     return /^[0-9]{4}$/.test(str);
-
 }
 
 function isUnique(str) {
